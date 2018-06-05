@@ -1,5 +1,7 @@
 import React from 'react';
 
+import questions from '../js/questions';
+
 class Root extends React.Component {
 
     constructor(props) {
@@ -10,6 +12,7 @@ class Root extends React.Component {
         return (
             <div>
                 <h1>Politiquiz, bitch</h1>
+         
             </div>
         )
     }
