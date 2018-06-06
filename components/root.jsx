@@ -1,6 +1,5 @@
 import React from 'react';
-
-import questions from '../js/questions';
+import Questions from '../js/questions';
 
 class Root extends React.Component {
 
@@ -11,8 +10,8 @@ class Root extends React.Component {
     render () {
         return (
             <div>
-                <h1>Politiquiz, bitch</h1>
-         
+                <h1>Politiquiz</h1>
+
             </div>
         )
     }
