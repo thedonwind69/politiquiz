@@ -4,3 +4,13 @@ body {
     color: white;
     text-align: center; 
 }
+button {
+    cursor: pointer;
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+button:hover {
+    background: rgb(161, 189, 211);
+}
