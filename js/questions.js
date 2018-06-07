@@ -73,7 +73,7 @@ var questionsArray = [
     }
     ,
     {
-        subject: 'Gay Marriage',
+        subject: 'Marriage',
         question: 'What are your thoughts on gay marriage?',
         answers: [
             {result: 'I follow the traditional definition of marriage as a union between one man and one woman. This does not come from any form of hate, but instead from the belief that the institution of marriage was set by our founding fathers, and has been defined this way throughout history, and that changing it compromises the sanctity of the institution. With raising a family, having a male and female authority figure is a healthier and more balanced way for a child to grow up.',
@@ -180,12 +180,15 @@ var questionsArray = [
 
 ]
 
-const shuffle = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+const shuffle = (arr) => {
+    for (let i=0; i< 1000; i++) {   
+        let loc1 = Math.floor(Math.random() * arr.length );
+        let loc2 = Math.floor(Math.random() * arr.length );
+        let temp = arr[loc1];
+        arr[loc1] = arr[loc2];
+        arr[loc2] = temp;
     }
-    return array;
+   return arr;
 }
     
 var Questions = shuffle(questionsArray);
