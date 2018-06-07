@@ -18,10 +18,15 @@ class Welcome extends React.Component {
         return (
             <div>
                 <h1>Welcome</h1>
-                
+                <div>
 
 
 
+
+
+
+
+                </div>
                 <button>Start Quiz</button>
             </div>
         )
