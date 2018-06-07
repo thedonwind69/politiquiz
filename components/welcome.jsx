@@ -8,9 +8,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-import App from './app';
-
-class Root extends React.Component {
+class Welcome extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,14 +17,16 @@ class Root extends React.Component {
     render () {
         return (
             <div>
-                <h1>Politiquiz</h1>
-                <HashRouter>
-                    <App />
-                </HashRouter>
+                <h1>Welcome</h1>
+                
+
+
+
+                <button>Start Quiz</button>
             </div>
         )
     }
 
 }
 
-export default Root;
+export default Welcome;

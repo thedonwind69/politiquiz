@@ -8,9 +8,9 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-import App from './app';
+import Welcome from './welcome';
 
-class Root extends React.Component {
+class App extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,14 +19,11 @@ class Root extends React.Component {
     render () {
         return (
             <div>
-                <h1>Politiquiz</h1>
-                <HashRouter>
-                    <App />
-                </HashRouter>
+                <Route exact path="/" component={Welcome} />
             </div>
         )
     }
 
 }
 
-export default Root;
+export default App;
