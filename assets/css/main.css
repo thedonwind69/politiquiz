@@ -6,8 +6,6 @@ body {
 }
 button {
     cursor: pointer;
-    min-width: 100px;
-    min-height: 50px;
     font-size: 25px;
     border-radius: 10px;
 }
