@@ -18,9 +18,9 @@ class Welcome extends React.Component {
         return (
             <div>
                 <h1>Welcome</h1>
-                <div>
+                <div class="welcome-message">
 
-
+                    <h1>Between Democrat, Republican, or Libertarian, find answer these questions to see which party you belong to!</h1>
 
 
 

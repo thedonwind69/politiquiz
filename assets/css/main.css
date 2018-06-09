@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(232, 157, 152);
+    background: radial-gradient(rgb(205, 147, 147), rgb(181, 97, 97));
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     text-align: center; 
@@ -11,4 +11,7 @@ button {
 }
 button:hover {
     background: rgb(161, 189, 211);
+}
+.welcome-message {
+    min-height: 470px;
 }
