@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {
     Route,
     Redirect,
@@ -19,9 +20,16 @@ class Question extends React.Component {
     answers () {
         var answers = Questions[this.questionIndex].answers;
         var renderAnswers = answers.map((answer) => (
-                <li>{answer.result}</li>
+            <li>
+                <input onClick={this.getParty.bind(this)} type="radio" name="answer" value={`${answer.party}`} />
+                {answer.result}
+            </li>
         ));
         return renderAnswers;
+    }
+
+    getParty (event) {
+        console.log(event.currentTarget.value);
     }
 
     buttons () {
@@ -49,6 +57,14 @@ class Question extends React.Component {
         this.setState({
             questionIndex: this.questionIndex += 1,
         })
+        
+    }
+
+    componentDidUpdate () {
+        var questionBody = ReactDOM.findDOMNode(this.refs.questionBody);
+        if (questionBody) {
+             questionBody.classList.toggle("fade");
+        }
     }
 
     render () {
@@ -57,7 +73,7 @@ class Question extends React.Component {
         if (this.questionIndex <= 11) {
             return (
             <div>
-                <div class='question-body'>
+                <div ref='questionBody' class='question-body fade'>
                     <h1>Question {this.questionIndex + 1} of 12</h1>
                     <h1>{currentQuestion.subject}</h1>
                     <h1>{currentQuestion.question}</h1>

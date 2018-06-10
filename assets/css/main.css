@@ -14,6 +14,13 @@ button {
 button:hover {
     background: rgb(161, 189, 211);
 }
+ul {
+    list-style: none;
+    font-size: 20px;
+}
+li {
+    padding: 10px;
+}
 .welcome-message {
     position: relative;
     min-height: 470px;
@@ -59,6 +66,7 @@ button:hover {
     }
 }
 .question-body {
+    position: relative;
     min-height: 500px;
     border: 1px solid white;
 }
