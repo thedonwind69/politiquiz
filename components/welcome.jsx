@@ -1,5 +1,4 @@
 import React from 'react';
-import Questions from '../js/questions';
 import {
     Route,
     Redirect,
