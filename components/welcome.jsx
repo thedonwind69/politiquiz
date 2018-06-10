@@ -23,10 +23,8 @@ class Welcome extends React.Component {
 
 
 
-
-
                 </div>
-                <button>Start Quiz</button>
+                <Link to="/questions"><button>Start Quiz</button></Link>
             </div>
         )
     }

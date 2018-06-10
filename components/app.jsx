@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 
 import Welcome from './welcome';
+import Question from './question';
 
 class App extends React.Component {
 
@@ -19,6 +20,7 @@ class App extends React.Component {
         return (
             <div>
                 <Route exact path="/" component={Welcome} />
+                <Route path='/questions' component={Question} />
             </div>
         )
     }
