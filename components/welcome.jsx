@@ -16,15 +16,15 @@ class Welcome extends React.Component {
     render () {
         return (
             <div>
+            <div class='fade welcome-message'>
                 <h1>Welcome</h1>
-                <div class="welcome-message">
+              
 
                     <h1>Between Democrat, Republican, or Libertarian, find answer these questions to see which party you belong to!</h1>
 
 
-
-                </div>
-                <Link to="/questions"><button>Start Quiz</button></Link>
+            </div>
+            <Link to="/questions"><button>Start Quiz</button></Link>
             </div>
         )
     }
