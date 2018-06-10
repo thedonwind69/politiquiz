@@ -7,6 +7,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Questions from '../js/questions';
+import Result from './result';
 
 class Question extends React.Component {
 
@@ -51,26 +52,27 @@ class Question extends React.Component {
     }
 
     render () {
-        console.log(this.questionIndex);
+  
         var currentQuestion = Questions[this.questionIndex];
-        console.log(currentQuestion);
-
-        return (
+        if (this.questionIndex <= 11) {
+            return (
             <div>
-                <h1>Question {this.questionIndex + 1} of 12</h1>
-                <h1>{currentQuestion.subject}</h1>
-                <h1>{currentQuestion.question}</h1>
-
-                <ul>
-                    {this.answers()}
-                </ul>
-
-                <div>
-                    {this.buttons()}
-                </div>
-
+                <div class='question-body'>
+                    <h1>Question {this.questionIndex + 1} of 12</h1>
+                    <h1>{currentQuestion.subject}</h1>
+                    <h1>{currentQuestion.question}</h1>
+                    <ul>
+                        {this.answers()}
+                    </ul>
+                </div> 
+                {this.buttons()}
             </div>
-        )
+            )
+        } else {
+            return <Result />
+        }
+
+       
     }
 
 }
