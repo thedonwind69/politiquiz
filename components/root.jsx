@@ -19,7 +19,6 @@ class Root extends React.Component {
     render () {
         return (
             <div>
-                <h1>Politiquiz</h1>
                 <HashRouter>
                     <App />
                 </HashRouter>

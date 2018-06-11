@@ -5,6 +5,8 @@ html {
     text-align: center; 
     height: 100%;
     font-size: 15px;
+    margin: 0px;
+    padding: 0px;
 }
 button {
     cursor: pointer;
@@ -23,10 +25,13 @@ li {
 }
 .welcome-message {
     position: relative;
-    min-height: 470px;
 }
 .question-body {
     position: relative;
     min-height: 500px;
     border: 1px solid white;
+}
+.politiquiz {
+    font-size: 100px;
+    padding: 80px;
 }

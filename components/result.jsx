@@ -16,8 +16,8 @@ class Result extends React.Component {
     }
 
     componentDidMount () {
-        setTimeout(function() { //Start the timer
-            this.setState({resultReady: true}) //After 1 second, set render to true
+        setTimeout(function() { 
+            this.setState({resultReady: true})
         }.bind(this), 5000)
     }
 

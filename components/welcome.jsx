@@ -17,12 +17,8 @@ class Welcome extends React.Component {
         return (
             <div>
             <div class='fade welcome-message'>
-                <h1>Welcome</h1>
-              
-
-                    <h1>Between Democrat, Republican, or Libertarian, find answer these questions to see which party you belong to!</h1>
-
-
+                <h1 class='politiquiz animated bounceInDown'>POLITIQUIZ</h1>
+                <h1>Between Democrat, Republican, or Libertarian, answer these questions to see which party you belong to!</h1>
             </div>
             <Link to="/questions"><button>Start Quiz</button></Link>
             </div>

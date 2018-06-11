@@ -73,6 +73,7 @@ class Question extends React.Component {
         if (this.questionIndex <= 11) {
             return (
             <div>
+                <h1>POLITIQUIZ</h1>
                 <div ref='questionBody' class='question-body fade'>
                     <h1>Question {this.questionIndex + 1} of 12</h1>
                     <h1>{currentQuestion.subject}</h1>
@@ -85,7 +86,12 @@ class Question extends React.Component {
             </div>
             )
         } else {
-            return <Result />
+            return (
+                <div>
+                    <h1>POLITIQUIZ</h1>
+                    <Result />
+                </div>
+            )
         }
 
        
