@@ -15,6 +15,7 @@ class Question extends React.Component {
     constructor(props) {
         super(props);
         this.questionIndex = 0;
+        this.array = [];
     }
 
     answers () {
@@ -57,14 +58,12 @@ class Question extends React.Component {
         this.setState({
             questionIndex: this.questionIndex += 1,
         })
-        
     }
 
-    componentDidUpdate () {
-        var questionBody = ReactDOM.findDOMNode(this.refs.questionBody);
-        if (questionBody) {
-             questionBody.classList.toggle("fade");
-        }
+    componentWillUpdate () {
+        console.log("updating");
+        this.array.push("sex");
+        console.log(this.array);
     }
 
     render () {
