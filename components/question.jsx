@@ -14,27 +14,33 @@ class Question extends React.Component {
 
     constructor(props) {
         super(props);
-        this.questionIndex = 0;
-        this.array = [];
+        this.state = {
+            questionIndex: 0,
+            selectionsHash: {}
+        }
     }
 
     answers () {
-        var answers = Questions[this.questionIndex].answers;
+        var answers = Questions[this.state.questionIndex].answers;
         var renderAnswers = answers.map((answer) => (
-            <li>
+            <label>
                 <input onClick={this.getParty.bind(this)} type="radio" name="answer" value={`${answer.party}`} />
-                {answer.result}
-            </li>
+                {answer.result}<br/><br/><br/>
+            </label>
         ));
         return renderAnswers;
     }
 
     getParty (event) {
-        console.log(event.currentTarget.value);
+        var newSelections = this.state.selectionsHash;
+        newSelections[this.state.questionIndex] = event.currentTarget.value;
+        this.setState({
+            selectionsHash: newSelections,
+        })
     }
 
     buttons () {
-        if (this.questionIndex === 0) {
+        if (this.state.questionIndex === 0) {
             return (
                 <button onClick={this.nextQuestion.bind(this)}>Next</button>
             )
@@ -50,36 +56,42 @@ class Question extends React.Component {
 
     prevQuestion () {
         this.setState({
-            questionIndex: this.questionIndex -= 1,
+            questionIndex: this.state.questionIndex -= 1,
         })
     }
 
     nextQuestion () {
-        this.setState({
-            questionIndex: this.questionIndex += 1,
-        })
+        if (Boolean(this.state.selectionsHash[this.state.questionIndex])) {
+            this.setState({
+                questionIndex: this.state.questionIndex += 1,
+            })
+        } else {
+            alert("You haven't selected a choice yet bitch");
+        }
+        this.uncheck();  
     }
 
-    componentWillUpdate () {
-        console.log("updating");
-        this.array.push("sex");
-        console.log(this.array);
+    uncheck () {
+        var answersList = document.getElementsByTagName("input");
+        for (let i = 0; i<answersList.length; i++) {
+            answersList[i].checked = false;
+        }
     }
 
     render () {
-  
-        var currentQuestion = Questions[this.questionIndex];
-        if (this.questionIndex <= 11) {
+        console.log(this.state.selectionsHash);
+        var currentQuestion = Questions[this.state.questionIndex];
+        if (this.state.questionIndex <= 11) {
             return (
             <div>
                 <h1>POLITIQUIZ</h1>
-                <div ref='questionBody' class='question-body fade'>
-                    <h1>Question {this.questionIndex + 1} of 12</h1>
+                <div ref='questionBody' class='question-body'>
+                    <h1>Question {this.state.questionIndex + 1} of 12</h1>
                     <h1>{currentQuestion.subject}</h1>
                     <h1>{currentQuestion.question}</h1>
-                    <ul>
+                    <form ref="answersList" class='answers'>
                         {this.answers()}
-                    </ul>
+                    </form>
                 </div> 
                 {this.buttons()}
             </div>

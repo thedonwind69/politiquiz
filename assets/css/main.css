@@ -16,22 +16,24 @@ button {
 button:hover {
     background: rgb(161, 189, 211);
 }
-ul {
+ul, form {
     list-style: none;
-    font-size: 20px;
-}
-li {
-    padding: 10px;
+    font-size: 22px;
 }
 .welcome-message {
     position: relative;
 }
 .question-body {
+    margin: auto;
     position: relative;
     min-height: 500px;
+    width: calc(100% - 90px);
     border: 1px solid white;
 }
 .politiquiz {
     font-size: 100px;
     padding: 80px;
+}
+.answers label:hover {
+    color: rgb(154, 204, 242);
 }
