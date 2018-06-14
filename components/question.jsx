@@ -37,6 +37,7 @@ class Question extends React.Component {
         this.setState({
             selectionsHash: newSelections,
         })
+        console.log(event.currentTarget.value);
     }
 
     buttons () {
@@ -58,6 +59,7 @@ class Question extends React.Component {
         this.setState({
             questionIndex: this.state.questionIndex -= 1,
         })
+        this.checkPrevious();
     }
 
     nextQuestion () {
@@ -68,20 +70,27 @@ class Question extends React.Component {
         } else {
             alert("You haven't selected a choice yet bitch");
         }
-        this.uncheck();  
     }
 
-    uncheck () {
+    checkPrevious () {
         var answersList = document.getElementsByTagName("input");
-        if (this.state.selectionsHash[this.state.questionIndex] === undefined) {
-            for (let i = 0; i<answersList.length; i++) {
-                answersList[i].checked = false;
+        for (let i = 0; i<answersList.length; i++) {
+            let currentAnswerElement = answersList[i];
+            if (this.state.selectionsHash[this.state.questionIndex] === currentAnswerElement.value) {
+                currentAnswerElement.checked = true;
+                console.log(this.getFuckingIndex(currentAnswerElement));
+                console.log(this.state.questionIndex);
+                console.log(currentAnswerElement.value);
             }
-        } 
+        }
+    }
+
+    getFuckingIndex (element) {
+        const fuckingIndex = Array.prototype.indexOf.call(element.parentNode.children, element);
+        return fuckingIndex;
     }
 
     render () {
-        console.log(this.state.selectionsHash[this.state.questionIndex] === undefined);
         var currentQuestion = Questions[this.state.questionIndex];
         if (this.state.questionIndex <= 11) {
             return (
