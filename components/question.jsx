@@ -73,13 +73,15 @@ class Question extends React.Component {
 
     uncheck () {
         var answersList = document.getElementsByTagName("input");
-        for (let i = 0; i<answersList.length; i++) {
-            answersList[i].checked = false;
-        }
+        if (this.state.selectionsHash[this.state.questionIndex] === undefined) {
+            for (let i = 0; i<answersList.length; i++) {
+                answersList[i].checked = false;
+            }
+        } 
     }
 
     render () {
-        console.log(this.state.selectionsHash);
+        console.log(this.state.selectionsHash[this.state.questionIndex] === undefined);
         var currentQuestion = Questions[this.state.questionIndex];
         if (this.state.questionIndex <= 11) {
             return (
