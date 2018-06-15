@@ -104,8 +104,8 @@ class Question extends React.Component {
                 <h1>POLITIQUIZ</h1>
                 <div ref='questionBody' class='question-body'>
                     <h1>Question {this.state.questionIndex + 1} of 12</h1>
-                    <h1>{currentQuestion.subject}</h1>
-                    <h1>{currentQuestion.question}</h1>
+                    <h1 class='question-subject'>{currentQuestion.subject}</h1>
+                    <h1 class='question-question'>{currentQuestion.question}</h1>
                     <form ref="answersList" class='answers'>
                         {this.answers()}
                     </form>
@@ -117,7 +117,7 @@ class Question extends React.Component {
             return (
                 <div>
                     <h1>POLITIQUIZ</h1>
-                    <Result />
+                    <Result selections={this.state.selectionsHash}/>
                 </div>
             )
         }
