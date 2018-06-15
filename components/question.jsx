@@ -80,7 +80,6 @@ class Question extends React.Component {
                 currentAnswerElement.checked = true;
                 console.log(this.getFuckingIndex(currentAnswerElement));
                 console.log(this.state.questionIndex);
-                console.log(currentAnswerElement.value);
             }
         }
     }
