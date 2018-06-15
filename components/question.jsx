@@ -33,11 +33,13 @@ class Question extends React.Component {
 
     getParty (event) {
         var newSelections = this.state.selectionsHash;
-        newSelections[this.state.questionIndex] = event.currentTarget.value;
+        newSelections[this.state.questionIndex] = {
+            party: event.currentTarget.value,
+            answerIndex: this.getElementIndex(event.currentTarget.parentNode)
+        }
         this.setState({
             selectionsHash: newSelections,
         })
-        console.log(event.currentTarget.value);
     }
 
     buttons () {
@@ -68,25 +70,30 @@ class Question extends React.Component {
                 questionIndex: this.state.questionIndex += 1,
             })
         } else {
-            alert("You haven't selected a choice yet bitch");
+            alert("You haven't selected a choice yet!");
         }
+        this.checkNext();
     }
 
     checkPrevious () {
         var answersList = document.getElementsByTagName("input");
-        for (let i = 0; i<answersList.length; i++) {
-            let currentAnswerElement = answersList[i];
-            if (this.state.selectionsHash[this.state.questionIndex] === currentAnswerElement.value) {
-                currentAnswerElement.checked = true;
-                console.log(this.getFuckingIndex(currentAnswerElement));
-                console.log(this.state.questionIndex);
+        answersList[this.state.selectionsHash[this.state.questionIndex].answerIndex].checked = true;
+    }
+
+    checkNext() {
+        var answersList = document.getElementsByTagName("input");
+        if (this.state.selectionsHash[this.state.questionIndex]) {
+            answersList[this.state.selectionsHash[this.state.questionIndex].answerIndex].checked = true;
+        } else {
+            for (let i = 0; i<answersList.length; i++) {
+                answersList[i].checked = false;
             }
         }
     }
 
-    getFuckingIndex (element) {
-        const fuckingIndex = Array.prototype.indexOf.call(element.parentNode.children, element);
-        return fuckingIndex;
+    getElementIndex (element) {
+        const elementIndex = Array.prototype.indexOf.call(element.parentNode.children, element);
+        return elementIndex;
     }
 
     render () {
