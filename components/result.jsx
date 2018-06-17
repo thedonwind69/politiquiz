@@ -11,7 +11,8 @@ class Result extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            resultReady: false
+            resultReady: false,
+            selections: this.props.selections
         }
     }
 
