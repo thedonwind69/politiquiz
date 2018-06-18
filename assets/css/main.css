@@ -34,31 +34,28 @@ ul, form {
 .question-body {
     margin: auto;
     position: relative;
-    min-height: 500px;
     width: calc(100% - 90px);
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    color: rgb(31, 31, 31);
+    background: radial-gradient(rgb(205, 147, 147), rgb(181, 97, 97));
+    border-radius: 5px;
 }
 .politiquiz {
     font-size: 100px;
     padding: 80px;
 }
 .answers label:hover {
-    color: rgb(97, 158, 250);
+    color: rgb(190, 213, 249);
 }
 .question-subject {
-    color: rgb(145, 53, 43);
+    color: rgb(255, 253, 139);
 }
 .question-question {
-    color: rgb(58, 85, 130);
+    color: rgb(183, 203, 255);
 }
 .result-body {
     width: calc(100% - 90px);
     margin: auto;
     position: relative;
     min-height: 500px;
-    box-shadow: 2px 2px 2px gray;
     border-radius: 10px;
     padding-top: 50px;
 }
@@ -70,7 +67,6 @@ ul, form {
     font-size: 22px;
 }
 .party-pic {
-    border: 1px solid white;
     width: 300px;
     height: 300px;
 }

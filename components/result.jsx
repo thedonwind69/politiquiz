@@ -57,6 +57,8 @@ class Result extends React.Component {
         if (this.equalResultOrNot(count)) {
             endResult = "Libertarian";
         }
+        console.log(count);
+        console.log(endResult);
         return resultDescription(endResult);
     }
 
@@ -82,8 +84,8 @@ class Result extends React.Component {
     }
 
     render () {
-        var result = this.resultParty()
         if (this.state.resultReady) {
+            var result = this.resultParty()
             return (
                 <div class='fade result-body'>
                     <h1>You're a {result.party}!</h1>

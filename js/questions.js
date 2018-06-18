@@ -29,7 +29,7 @@ var questionsArray = [
     ,
     {
         subject: 'Abortion',
-        question: 'How do you feel about abortion?',
+        question: 'What`s your stance on abortion?',
         answers: [
             {result: 'The woman has a right to choose what she does with her body, and that right should come first before anything. The fetus is not a human life until a certain point in pregnancy, so abortion is ethical because for the reasons of personal liberty and being able to decide for oneself, in which the government has no right to intervene in what a woman does with her body. Therefore, I support abortion.',
             party: 'Democrat'},
