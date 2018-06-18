@@ -6,6 +6,7 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+import resultDescription from '../js/resultDescriptions';
 
 class Result extends React.Component {
     constructor(props) {
@@ -53,9 +54,10 @@ class Result extends React.Component {
                 }
             })
         }
-        console.log('equalornot');
-        console.log(this.equalResultOrNot(count));
-        return endResult;
+        if (this.equalResultOrNot(count)) {
+            endResult = "Libertarian";
+        }
+        return resultDescription(endResult);
     }
 
     equalResultOrNot (count) {
@@ -76,19 +78,17 @@ class Result extends React.Component {
         } else {
             equalOrNot = false;
         }
-        console.log('arrays');
-        console.log(equals5);
-        console.log(equals6);
         return equalOrNot;
     }
 
     render () {
+        var result = this.resultParty()
         if (this.state.resultReady) {
-            console.log(this.calculateResult());
-            console.log(this.resultParty());
             return (
-                <div class='fade'>
-                    <h1>Result bitch!!!</h1>
+                <div class='fade result-body'>
+                    <h1>You're a {result.party}!</h1>
+                    <p>{result.description}</p>
+                    <img class='party-pic' src={result.url} />
                 </div>
             )
         } else {
@@ -97,7 +97,7 @@ class Result extends React.Component {
                     <div class="loader">
                     
                     </div>
-                 <h1>Loading bitch...</h1>
+                 <h1>Calcluating your result... based on your political views...</h1>
                 </div>
             )
         }
