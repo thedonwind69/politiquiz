@@ -58,4 +58,13 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+.flag-loader {
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    opacity: 0.8;
+    background: url('../images/flag.gif');
+    background-size: 100% 100%;
+}
   

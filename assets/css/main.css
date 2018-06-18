@@ -26,9 +26,9 @@ ul, form {
     background-size: 100% 100%;
     margin: auto;
     margin-top: 100px;
-    border-radius: 10px;
+    min-height: 420px;
+    border-radius: 2px;
     width: calc(100% - 90px);
-    border: 1px solid white;
     color: rgb(255, 255, 255);
 }
 .question-body {
@@ -39,8 +39,8 @@ ul, form {
     border-radius: 5px;
 }
 .politiquiz {
-    font-size: 100px;
-    padding: 80px;
+    font-size: 80px;
+    padding-top: 90px;
 }
 .answers label:hover {
     color: rgb(190, 213, 249);
@@ -65,8 +65,65 @@ ul, form {
 }
 .result-body p {
     font-size: 22px;
+    color: rgb(227, 250, 254);
 }
 .party-pic {
     width: 300px;
     height: 300px;
 }
+.start-button{
+    background:rgb(24, 68, 162);
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  .start-button:hover{
+    background:rgb(66, 122, 187);
+    color:rgb(255, 255, 255);
+  }
+  .start-button:before,.start-button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: rgb(255, 255, 255);
+    transition:400ms ease all;
+  }
+  .start-button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .start-button:hover:before,.start-button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
+@media screen and (min-width: 1500px) {
+    body {
+     width: 1500px;
+     margin: auto;
+    }
+ }
+ @media screen and (max-width: 800px) {
+    .politiquiz {
+        font-size: 50px;
+    }
+ }
+ @media screen and (max-width: 500px) {
+    .politiquiz {
+        font-size: 30px;
+    }
+    .welcome-message {
+        width: 100%;
+    }
+ }

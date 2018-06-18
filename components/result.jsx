@@ -87,7 +87,7 @@ class Result extends React.Component {
         if (this.state.resultReady) {
             var result = this.resultParty()
             return (
-                <div class='fade result-body'>
+                <div class='fade result-body animated zoomInDown'>
                     <h1>You're a {result.party}!</h1>
                     <p>{result.description}</p>
                     <img class='party-pic' src={result.url} />
@@ -96,10 +96,10 @@ class Result extends React.Component {
         } else {
             return (
                 <div>
-                    <div class="loader">
-                    
+                    <div class="flag-loader">
+
                     </div>
-                 <h1>Calcluating your result... based on your political views...</h1>
+                 <h1>Calcluating your result...</h1>
                 </div>
             )
         }
