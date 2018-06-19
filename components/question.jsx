@@ -20,11 +20,23 @@ class Question extends React.Component {
         }
     }
 
+    componentDidUpdate () {
+         var answersList = ReactDOM.findDOMNode(this.refs.answersList);
+         if (answersList) {
+            for (let i = 0; i<answersList.children.length; i++) {
+                answersList.children[i].classList.remove('answer-checked');
+            }
+            if (this.state.selectionsHash[this.state.questionIndex]) {
+                answersList[this.state.selectionsHash[this.state.questionIndex].answerIndex].parentNode.classList.add('answer-checked');
+            }  
+        }
+    }
+
     answers () {
         var answers = Questions[this.state.questionIndex].answers;
-        var renderAnswers = answers.map((answer) => (
+        var renderAnswers = answers.map((answer, index) => (
             <label>
-                <input onClick={this.getParty.bind(this)} type="radio" name="answer" value={`${answer.party}`} />
+                <input class='answerInput' onClick={this.getParty.bind(this)} type="radio" name="answer" value={`${answer.party}`} />
                 {answer.result}<br/><br/><br/>
             </label>
         ));
@@ -45,13 +57,13 @@ class Question extends React.Component {
     buttons () {
         if (this.state.questionIndex === 0) {
             return (
-                <button onClick={this.nextQuestion.bind(this)}>Next</button>
+                <button class='qbutton' onClick={this.nextQuestion.bind(this)}>Next</button>
             )
         } else {
             return (
                 <div>
-                <button onClick={this.prevQuestion.bind(this)}>Previous</button>
-                <button onClick={this.nextQuestion.bind(this)}>Next</button>
+                <button class='qbutton' onClick={this.prevQuestion.bind(this)}>Previous</button>
+                <button class='qbutton' onClick={this.nextQuestion.bind(this)}>Next</button>
                 </div>
             )
         }

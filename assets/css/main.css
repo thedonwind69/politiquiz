@@ -43,10 +43,13 @@ ul, form {
     padding-top: 90px;
 }
 .answers label:hover {
-    color: rgb(190, 213, 249);
+    color: rgb(159, 191, 242);
+}
+.answer-checked {
+    color: rgb(81, 194, 255);
 }
 .question-subject {
-    color: rgb(255, 253, 139);
+    color: rgb(255, 242, 101);
 }
 .question-question {
     color: rgb(183, 203, 255);

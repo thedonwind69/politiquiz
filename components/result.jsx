@@ -57,8 +57,6 @@ class Result extends React.Component {
         if (this.equalResultOrNot(count)) {
             endResult = "Libertarian";
         }
-        console.log(count);
-        console.log(endResult);
         return resultDescription(endResult);
     }
 
@@ -97,7 +95,8 @@ class Result extends React.Component {
             return (
                 <div>
                     <div class="flag-loader">
-
+                    <div class='loader'>
+                    </div>
                     </div>
                  <h1>Calcluating your result...</h1>
                 </div>
