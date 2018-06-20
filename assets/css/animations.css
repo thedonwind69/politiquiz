@@ -102,11 +102,11 @@ padding: 50px;
 }
 
 .qbutton {
-    color: rgba(30, 22, 54, 0.6);
-    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+    color: rgba(22, 32, 54, 0.803);
+    box-shadow: rgba(190, 220, 255, 0.783) 0 0px 0px 2px inset;
 }
 
 .qbutton:hover {
-    color: rgba(255, 255, 255, 0.85);
-    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(10, 66, 162, 0.7) 0 0px 0px 40px inset;
 }
