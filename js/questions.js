@@ -193,4 +193,8 @@ const shuffle = (arr) => {
     
 var Questions = shuffle(questionsArray);
 
+Questions.forEach((question) => {
+    shuffle(question.answers);
+});
+
 export default Questions;

@@ -32,17 +32,6 @@ class Question extends React.Component {
         }
     }
 
-    shuffle (arr) {
-        for (let i=0; i< 1000; i++) {   
-            let loc1 = Math.floor(Math.random() * arr.length );
-            let loc2 = Math.floor(Math.random() * arr.length );
-            let temp = arr[loc1];
-            arr[loc1] = arr[loc2];
-            arr[loc2] = temp;
-        }
-       return arr;
-    }
-
     answers () {
         var answers = Questions[this.state.questionIndex].answers;
         var renderAnswers = answers.map((answer) => (
